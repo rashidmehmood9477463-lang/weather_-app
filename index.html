@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SkyCast | Weather App</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="app">
+    <header class="topbar">
+      <a class="brand" href="#">☁️ SkyCast</a>
+      <span class="live-label">● LIVE WEATHER</span>
+    </header>
+
+    <section class="search-section">
+      <p class="eyebrow">YOUR WEATHER, YOUR WORLD</p>
+      <h1>Discover the sky.</h1>
+      <p class="subtitle">Real-time conditions and a 7-day forecast.</p>
+
+      <form id="searchForm" class="search">
+        <span>⌕</span>
+        <input id="cityInput" type="text"
+          placeholder="Search a city, e.g. Lahore"
+          aria-label="City name" required>
+        <button type="submit">Search</button>
+      </form>
+      <p id="status" role="status">Loading weather...</p>
+    </section>
+
+    <section class="current card">
+      <div class="current-info">
+        <p class="eyebrow">CURRENT WEATHER</p>
+        <h2 id="cityName">Lahore, Pakistan</h2>
+        <p id="todayDate" class="muted"></p>
+        <h3 id="condition">Getting conditions...</h3>
+        <p class="muted">Feels like <span id="feels">--</span>°C</p>
+      </div>
+      <div class="temperature">
+        <span id="weatherIcon" class="weather-icon">🌤️</span>
+        <div><span id="temperature">--</span><span class="degree">°C</span></div>
+        <p class="muted">H: <span id="high">--</span>° / L: <span id="low">--</span>°</p>
+      </div>
+    </section>
+
+    <section class="details">
+      <article class="card metric">
+        <span>💧</span>
+        <p class="muted">Humidity</p>
+        <h3 id="humidity">--%</h3>
+      </article>
+      <article class="card metric">
+        <span>💨</span>
+        <p class="muted">Wind speed</p>
+        <h3><span id="wind">--</span> km/h</h3>
+      </article>
+      <article class="card metric">
+        <span>🌧️</span>
+        <p class="muted">Rain chance</p>
+        <h3 id="rain">--%</h3>
+      </article>
+      <article class="card metric">
+        <span>🌅</span>
+        <p class="muted">Sunrise</p>
+        <h3 id="sunrise">--:--</h3>
+      </article>
+    </section>
+
+    <section class="forecast-section">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">PLAN AHEAD</p>
+          <h2>7-Day Forecast</h2>
+        </div>
+        <span class="muted">Next 7 days</span>
+      </div>
+      <div id="forecast" class="forecast">
+        <p class="muted">Forecast will appear here.</p>
+      </div>
+    </section>
+
+    <footer>
+      Weather data by
+      <a href="https://open-meteo.com/" target="_blank"
+         rel="noreferrer">Open-Meteo</a>
+      · SkyCast University Project
+    </footer>
+  </main>
+</body>
+</html>

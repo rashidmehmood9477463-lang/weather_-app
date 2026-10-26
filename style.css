@@ -1,0 +1,182 @@
+:root {
+  font-family: Inter, "Segoe UI", Arial, sans-serif;
+  color: #f7f9ff;
+  background: #091426;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background:
+    radial-gradient(ellipse at 85% 0%, #244b78 0%, transparent 38%),
+    linear-gradient(145deg, #091426, #101f36 70%, #0b1425);
+}
+
+.app {
+  width: min(100% - 32px, 1000px);
+  margin: auto;
+  padding: 28px 0 20px;
+}
+
+.topbar, .section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.brand {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: white;
+  text-decoration: none;
+}
+
+.live-label, .eyebrow {
+  color: #8bc9ff;
+  font-size: .75rem;
+  font-weight: 750;
+  letter-spacing: 1.6px;
+}
+
+.search-section { margin: 48px 0 24px; }
+
+h1 {
+  margin: 8px 0;
+  font-size: clamp(2.2rem, 6vw, 3.6rem);
+  letter-spacing: -1.5px;
+}
+
+.subtitle, .muted { color: #a9b8ce; }
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  padding: 8px 10px 8px 16px;
+  border: 1px solid #344862;
+  border-radius: 16px;
+  background: #14243a;
+}
+
+.search input {
+  min-width: 0;
+  flex: 1;
+  padding: 12px 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: white;
+  font-size: 1rem;
+}
+
+.search input::placeholder { color: #92a2ba; }
+
+button {
+  padding: 12px 20px;
+  border: 0;
+  border-radius: 11px;
+  background: #71c7ff;
+  color: #092039;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+button:hover { background: #a0dcff; }
+button:focus-visible, input:focus-visible {
+  outline: 2px solid #a0dcff;
+  outline-offset: 3px;
+}
+
+#status { min-height: 20px; color: #a9b8ce; font-size: .9rem; }
+
+.card {
+  border: 1px solid #2a405d;
+  border-radius: 22px;
+  background: linear-gradient(140deg, #1a304c, #14243a);
+  box-shadow: 0 12px 32px #00000018;
+}
+
+.current {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding: 32px;
+}
+
+.current h2 { font-size: 1.8rem; margin: 12px 0; }
+.current h3 { margin: 16px 0 8px; }
+
+.temperature { text-align: center; }
+.temperature > div { white-space: nowrap; font-size: 3.5rem; font-weight: 750; }
+.degree { font-size: 1.7rem; vertical-align: top; }
+.weather-icon { display: block; font-size: 4rem; }
+
+.details {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  margin: 18px 0 42px;
+}
+
+.metric { padding: 20px; }
+.metric > span { font-size: 1.5rem; }
+.metric p { font-size: .9rem; }
+.metric h3 { font-size: 1.2rem; margin-bottom: 0; }
+
+.forecast-section h2 { margin: 6px 0 18px; }
+.forecast {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.day {
+  min-width: 0;
+  padding: 18px 8px;
+  text-align: center;
+  border: 1px solid #2a405d;
+  border-radius: 16px;
+  background: #14243a;
+}
+
+.day-name { font-size: .8rem; color: #b7c8df; }
+.day-icon { margin: 14px 0; font-size: 1.8rem; }
+.day-temp { font-weight: 800; }
+.day-low { margin-top: 8px; color: #9eafc6; font-size: .85rem; }
+
+footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #91a2bb;
+  font-size: .85rem;
+}
+
+footer a { color: #8bc9ff; }
+
+@media (max-width: 700px) {
+  .app { width: min(100% - 22px, 520px); padding-top: 20px; }
+  .search-section { margin-top: 35px; }
+  .current { padding: 22px 16px; gap: 10px; }
+  .current h2 { font-size: 1.35rem; overflow-wrap: anywhere; }
+  .temperature > div { font-size: 2.6rem; }
+  .weather-icon { font-size: 3rem; }
+  .details { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 32px; }
+  .metric { padding: 16px; }
+  .forecast { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .day:last-child { grid-column: 1 / -1; }
+  .section-heading { align-items: flex-start; }
+}
+
+@media (max-width: 360px) {
+  .current { flex-direction: column; align-items: flex-start; }
+  .temperature { align-self: center; }
+  .live-label { font-size: .62rem; letter-spacing: .5px; }
+  .search { gap: 7px; padding-left: 10px; }
+  button { padding: 12px; }
+}
